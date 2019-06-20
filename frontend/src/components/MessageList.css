@@ -1,0 +1,19 @@
+
+.msg-list{
+    width: 70%;
+    margin: 2% auto; 
+}
+
+.msg-list li{
+    padding: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+    .msg-list li{
+        padding: 5%;
+    }
+
+    .msg-list{
+        width: 100%;
+    }
+}

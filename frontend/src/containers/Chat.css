@@ -1,0 +1,16 @@
+
+.chat{
+    text-align: center;
+}
+
+.chat-input{
+    width:80%;
+    margin-top: 65%;
+    margin:2% auto;
+}
+
+.send-msg-btn{
+    margin:1%;
+    width: 15%;
+}
+

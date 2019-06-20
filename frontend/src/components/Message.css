@@ -1,0 +1,23 @@
+
+.msg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border:2px solid rgba(9, 9, 73, 0.74);
+    border-radius: 7px;
+    box-shadow: 5px 10px 8px;
+    padding: 1%;
+}
+
+.msg div{
+    width:50%;
+}
+
+.msg-content{
+    word-break:break-all;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
