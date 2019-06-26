@@ -1,12 +1,24 @@
 
 .msg-list{
-    width: 70%;
+    width: 50%;
     margin: 2% auto; 
+    padding: 0;
 }
 
 .msg-list li{
     padding: 1%;
+    width: 100%;
 }
+
+@media only screen and (max-width: 1024px) {
+    .msg-list li{
+        padding: 2.5%;
+    }
+
+    .msg-list{
+        width: 70%;
+    }
+  }
 
 @media only screen and (max-width: 600px) {
     .msg-list li{
@@ -17,3 +29,4 @@
         width: 100%;
     }
 }
+

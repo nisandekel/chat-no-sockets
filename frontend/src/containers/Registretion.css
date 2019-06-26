@@ -1,4 +1,15 @@
 
 .registretion{
-    margin-top: 10%;
+    margin-top: 18%;
 }
+
+.registretion button{
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .registretion{
+        margin-top: 45%;
+    }
+}
+

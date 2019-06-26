@@ -2,49 +2,46 @@ import React from 'react';
 import Login from './containers/Login';
 import Registretion from './containers/Registertion';
 import Chat from './containers/Chat';
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
-import { Navbar } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Header from './components/Header';
 import './App.css';
 
 class App extends React.Component {
 
-  state = { isLoggedIn: false, userName: "" };
+  state = {
+    isLoggedIn: localStorage.getItem("isLoggedIn") || false,
+    userName: localStorage.getItem("userName") || "",
+    userAvatar: localStorage.getItem("userAvatar") || ""
+  };
   appTitle = "Rolling Chat";
 
-  userLoggedIn = () => {
-    this.setState({ isLoggedIn: true });
+  userLoggedIn = (userName, userAvatar) => {
+    localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("userAvatar", userAvatar);
+    this.setState({ isLoggedIn: true, userName, userAvatar });
   }
 
-  userLoggedOut = ()=>{
-    this.setState({isLoggedIn:false});
-  }
-
-  saveUserName = (userName) => {
-    this.setState({ userName });
+  userLoggedOut = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userAvatar");
+    this.setState({ isLoggedIn: false, userName: "" });
   }
 
   render() {
-
-    const linkName = this.state.isLoggedIn ? "Logout" : "Login";
-
     return (
       <div className="App">
         <Router>
-          <Header title={this.appTitle} />
-          <Navbar bg="dark" variant="dark" className="navbar">
-            <div className="navbar-links">
-              <Link className="link" to="/" onClick={this.userLoggedOut}>{linkName}</Link>
-              <Link className="link" to="/Registretion/">Registretion</Link>
-              <Link className="link" to="/Chat/">Chat</Link>
-            </div>
-          </Navbar>
+          <Header title={this.appTitle} userLoggedOut={this.userLoggedOut}
+            isLoggedIn={this.state.isLoggedIn} />
           <Route path="/" exact render={() => (
             this.state.isLoggedIn ? (<Redirect to='/Chat/' />) :
-              (<Login userLoggedIn={this.userLoggedIn} saveUserName={this.saveUserName} />)
+              (<Login userLoggedIn={this.userLoggedIn} />)
           )} />
           <Route path="/Registretion/" exact component={Registretion} />
-          <Route path="/Chat/" exact render={() => <Chat isLoggedIn={this.state.isLoggedIn} userName={this.state.userName} />} />
+          <Route path="/Chat/" exact render={() => <Chat isLoggedIn={this.state.isLoggedIn}
+            userName={this.state.userName} userAvatar={this.state.userAvatar}/>} />
         </Router>
       </div>
     );

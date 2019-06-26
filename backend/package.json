@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bluebird": "^3.5.5",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -13,6 +14,7 @@
     "express-basic-auth": "^1.2.0",
     "file-system": "^2.2.2",
     "md5": "^2.2.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "mysql2": "^1.6.5"
   }
 }

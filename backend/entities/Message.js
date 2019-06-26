@@ -1,11 +1,12 @@
 
 
 class Message{
-    constructor(id,content,userName,timeAndDate){
+    constructor(id,content,userName,dateTime,userAvatar){
         this.id=id;
         this.content=content;
         this.userName=userName;
-        this.timeAndDate=timeAndDate;
+        this.dateTime=dateTime;
+        this.userAvatar=userAvatar;
     }
 }
 

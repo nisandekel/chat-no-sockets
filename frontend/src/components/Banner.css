@@ -1,0 +1,53 @@
+
+.banner{
+    padding: 1%;
+    width: 30%;
+    margin: 2% auto;
+    border-radius: 7px;
+    text-align: center; 
+    color: white;
+    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.warning{
+    background-color: rgba(212, 50, 50, 0.753);
+}
+
+.success{
+    background-color: rgba(38, 170, 38, 0.76);
+}
+
+@media only screen and (max-width: 600px) {
+
+    .banner{
+        margin-top: 10%; 
+        width: 80%;
+        padding: 4%;
+    }
+}
+
+@-webkit-keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
