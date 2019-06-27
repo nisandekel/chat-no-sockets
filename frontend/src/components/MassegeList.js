@@ -23,11 +23,7 @@ const MessageList = (props) => {
 
 function dateTimeFormat(dateTime) {
     const dateTimeArr = dateTime.split(".")[0].split(dateTime.charAt(10));
-    const date = dateTimeArr[0];
-    const timeArr = dateTimeArr[1].split(":");
-    const hours = parseInt(timeArr[0]) + 3;
-    const time = hours + ":" + timeArr[1] + ":" + timeArr[2];
-    return date + " " + time;
+    return dateTimeArr[0] + " " + dateTimeArr[1];
 }
 
 export default MessageList;

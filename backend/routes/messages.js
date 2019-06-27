@@ -39,7 +39,7 @@ router.get('/:id', async function (req, res, next) {
 
 function getTimeAndDate() {
     const date = new Date();
-    const hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+    const hours = date.getHours() < 10 ? "0" + (date.getHours()+3) : (date.getHours()+3);
     const minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
     const seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
     const currentTime = hours + ":" + minutes + ":" + seconds;

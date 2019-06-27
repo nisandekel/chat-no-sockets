@@ -1,4 +1,4 @@
 
-export const baseUrl = "http://localhost:3000";
+export const baseUrl = window.location.origin;
 
 export const route = path => baseUrl + path;
