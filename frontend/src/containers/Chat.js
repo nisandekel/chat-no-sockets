@@ -30,6 +30,7 @@ class Chat extends React.Component {
 
     sendMsg = () => {
         const content = this.state.inputValue;
+        this.setState({inputValue:""})
         fetch(route('/messages'), {
             method: 'POST',
             body: JSON.stringify({

@@ -30,7 +30,7 @@
 }
 
 .msg-content{
-    line-break:break-all;
+    overflow-wrap: break-word;
     padding-left: 1%;
     margin: 0; 
 }
